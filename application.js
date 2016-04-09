@@ -86,7 +86,7 @@ $(function() {
             marketName.push(val.marketname);
            });
 
-          //console.log(marketName);
+          console.log(marketName);
 
           var counter = 0;
           //Now, use the id to get detailed info
@@ -168,4 +168,12 @@ $(function() {
 
         return false; // important: prevent the form from submitting
     });
+});
+
+
+$(function() {
+  $( "#searchZip" ).click(function() {
+    $("#searchZip").hide();
+    $( ".zipSearch" ).show();
+  });
 });
