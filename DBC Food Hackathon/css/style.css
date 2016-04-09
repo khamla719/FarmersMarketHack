@@ -1,0 +1,88 @@
+/*
+Project Name: DBC Civic Hackathon - Farmers Market Finder
+Author: Clayton Hopkins
+
+Style Guide
+Lato = Font
+30DC4C = Green
+9013FE = Purple
+292B33 = Dark Grey
+9B9B9B = Medium Grey
+D8D8D8 = Light Grey
+*/
+* {
+  -moz-box-sizing: border-box; /* Firexfox */
+  -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+  box-sizing: border-box; /* IE */
+}
+/* <div class="clearfix"></div> */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.clear {
+  clear: both;
+}
+.body-container {
+  width: 100%;
+  background-color: #292B33;
+  font-family: 'Lato', sans-serif;
+}
+h1 {
+  font-size: 60px;
+  color: #FFF;
+  padding: 1em;
+  line-height: 1.5em;
+}
+p {
+  font-size: 30px;
+  color: #FFF;
+  padding: 1em 2em;
+  line-height: 1.3em;
+}
+.italic {
+  font-style: italic;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a {
+  /*color: #FFF;*/
+}
+.navbar {
+}
+.intro {
+  background-image: url("../images/figs.png");
+  background-size: cover;
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+}
+.discover {
+  text-align: center;
+  padding: 1.5em 5em;
+}
+.discoverbutton {
+  background-color: #30DC4C;
+  padding: 1em 2em;
+  margin: 0 auto;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  width: 25%;
+  transition-duration: 0.4s;
+  text-transform: uppercase;
+}
+.discoverbutton:hover {
+  background-color: #9013FE;
+  color: #FFF;
+}
