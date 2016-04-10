@@ -114,6 +114,20 @@ a {
   border: none;
   margin-right: .25em;
 }
+.markerPop h1 {
+  color: #30DC4C;
+  font-weight: bolder;
+  font-size: 30px;
+}
+.markerPop h3 {
+  color: #292B33;
+  font-size: 20px;
+  margin-bottom: 1em;
+}
+.markerPop p {
+  color: #292B33;
+  font-size: 15px;
+}
 .learnButton {
   font-size: 30px;
   padding: .5em;
@@ -151,4 +165,8 @@ a {
 }
 .heart {
   color: #30DC4C;
+}
+.grey {
+  color: #292B33;
+  font-weight: bolder;
 }
