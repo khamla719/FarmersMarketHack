@@ -35,13 +35,16 @@ D8D8D8 = Light Grey
 h1 {
   font-size: 60px;
   color: #FFF;
-  padding: 1em;
+  line-height: 1.5em;
+}
+h2 {
+  font-size: 45px;
+  color: #FFF;
   line-height: 1.5em;
 }
 p {
-  font-size: 30px;
+  font-size: 25px;
   color: #FFF;
-  padding: 1em 2em;
   line-height: 1.3em;
 }
 .italic {
@@ -59,7 +62,22 @@ a:visited {
 a {
   /*color: #FFF;*/
 }
+.hide {
+  display: none;
+}
 .navbar {
+  padding: 2em;
+  margin-bottom: 5em;
+  width: 100%;
+}
+.navleft {
+  float: left;
+}
+.navright {
+  float: right;
+}
+.title {
+  padding: 1em;
 }
 .intro {
   background-image: url("../images/figs.png");
@@ -68,11 +86,30 @@ a {
   text-align: center;
   width: 100%;
 }
-.discover {
-  text-align: center;
-  padding: 1.5em 5em;
+.header {
+  background-color: RGBA(48,220,76,0.8);
+  margin: 5em 10em;
+  padding: 2em;
 }
-.discoverbutton {
+.marketinfo {
+  padding: 2em;
+}
+.marketinfo p {
+  padding: .25em 2em;
+}
+.footer {
+  text-align: center;
+  padding: 2em;
+  padding-bottom: 4.5em;
+}
+.footerline2 {
+  margin-bottom: 3em;
+}
+.footer a {
+  font-size: 25px;
+  color: #FFF;
+}
+.footerbutton {
   background-color: #30DC4C;
   padding: 1em 2em;
   margin: 0 auto;
@@ -80,9 +117,12 @@ a {
   margin-bottom: 2em;
   width: 25%;
   transition-duration: 0.4s;
-  text-transform: uppercase;
+  border-radius: 10px;
 }
-.discoverbutton:hover {
+.footerbutton:hover {
   background-color: #9013FE;
   color: #FFF;
+}
+.heart {
+  color: #30DC4C;
 }

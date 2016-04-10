@@ -16,29 +16,37 @@
 	<body class="body-container">
 
 		<section class="navbar">
-			<img src="images/marketicon.png" alt="Food Market Finder">
-			<p>Bay Area Farmers Market Finder</p>
-			<p>Menu</p>
+			<img class="navleft" src="images/marketicon.png" alt="Food Market Finder">
+			<p class="title navleft">Bay Area Farmers Market Finder</p>
+			<!-- <p class="navright">Menu</p> -->
 		</section>
 
 		<section class="intro">
-			<h1>Find Your Nearest Farmers Market</h1>
-			<p>Discover markets open right now by location and hours of operation</p>
+			<section class="header">
+				<h1>Find Your Nearest Farmers Market</h1>
+				<p>Search by location and hours of operation</p>
+			</section>
 		</section>
 
-		<section class="main">
+		<section class="marketinfo hide">
+			<p>Farmers Market:</p>
+			<p>Address:</p>
+			<p>Hours of Operation:</p>
+			<p>Accepts WIC Food Stamps:</p>
+			<p>Accepts SNAP Food Stamps:<p>
+			<p>Accepts SFMNP Food Stamps:</p>
+		</section>
+
+		<section class="main" id="mainview">
 			<img src="images/mapplaceholder.png" alt="Map Placeholder">
 		</section>
 
-		<section class="discover">
-			<p>Planning ahead? Here’s a list of all schedules and locations in the Bay Area. Also search for WIC Food Stamp options.</p>
-			<p class="discoverbutton">Discover</p>
+		<section class="footer">
+			<p>Om nom nom!</p>
+			<p class="footerline2">Made with <span class="heart">&hearts; </span> by AJ, Clayton, Khamla, and Simon</p>
+			<a target="_blank" class="footerbutton" href="https://github.com/khamla719/FarmersMarketHack">View on GitHub</a>
 		</section>
 
-		<!-- <section class="footer">
-			<a target="_blank" class="footer-button" href="https://medium.com/@claytonhopkins/put-a-bird-on-it-e266acce1da2#.jumu2hi3y">About this Project</a>
-			<p class="footer-p">Made with <span class="footer-blue">&hearts; </span>by Clayton <span class="footer-blue">|</span> <a target="_blank" class="portfolio-link" href="http://cehopkins.com">cehopkins.com</a></p>
-		</section> -->
 
 		<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
 		<script src="js/index.js"></script>
