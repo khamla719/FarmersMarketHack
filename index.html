@@ -1,48 +1,82 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-  <meta charset="utf-8">
-  <title>Places Searchbox</title>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="Farmers Market Hack" content="Farmers Market Hack">
+
+		<title>Find A Farmers Market</title>
+
+		<link href='https://fonts.googleapis.com/css?family=Lato:400,100,100italic,400italic,900,900italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
+		<style>
+
+			#map-canvas{
+			    height: 500px;
+			    width: 700px;
+			}
+
+		</style>
+
+	</head>
+
+	<body class="body-container">
+
+		<section class="navbar">
+			<img class="navleft" src="images/marketicon.png" alt="Food Market Finder">
+			<p class="title navleft">Bay Area Farmers Market Finder</p>
+			<!-- <p class="navright">Menu</p> -->
+		</section>
+
+		<section class="intro">
+			<section class="header">
+				<h1>Find Your Nearest Farmers Market</h1>
+				<p>Search by location and hours of operation</p>
+			</section>
+		</section>
+
+		<section class="marketinfo hide">
+			<p>Farmers Market:</p>
+			<p>Address:</p>
+			<p>Hours of Operation:</p>
+			<p>Accepts WIC Food Stamps:</p>
+			<p>Accepts SNAP Food Stamps:<p>
+			<p>Accepts SFMNP Food Stamps:</p>
+		</section>
+		
+		<div id="control">
+	    <form method="get" id="chooseZip">
+	      <button type="submit" class="learnButton">Use current location</button>
+	      <button type="button" id="searchZip" class="learnButton">Search by Zip Code</button>
+	      <div class="clear"></div>
+	      <div class="zipSearch">
+	        <input id="textZip" type="text" name="zip" placeholder="enter your zip code" autofocus>
+	        <button type="submit" class="learnButton">Search</button>
+	      </div>
+	      <div class="clear"></div>
+	    </form>
+	    <div class="clear"></div>
+	    <div id="results"></div>
+	  </div>
+
+		<section class="main" id="mainview">
+			<div id="map-canvas"></div>
+		</section>
+
+		<section class="footer">
+			<p>Om nom nom!</p>
+			<p class="footerline2">Made with <span class="heart">&hearts; </span> by AJ, Clayton, Khamla, and Simon</p>
+			<a target="_blank" class="footerbutton" href="https://github.com/khamla719/FarmersMarketHack">View on GitHub</a>
+		</section>
 
 
-<style>
-
-#map-canvas{
-    height: 500px;
-    width: 700px;
-}
-
-</style>
-</head>
-<body>
-
-  
-  <div id="control">
-    <h2>Find Local Farmers Markets</h2>
-    <p>We'll help you locate your closest farmers markets. Simply choose an option below to begin...</p>
-    <form method="get" id="chooseZip">
-      <button type="submit" class="learnButton">Use current location</button>
-      <button type="button" id="searchZip" class="learnButton">Search by Zip Code</button>
-      <div class="clear"></div>
-      <div class="zipSearch">
-        <input id="textZip" type="text" name="zip" placeholder="enter your zip code" autofocus>
-        <button type="submit" class="learnButton">Search</button>
-      </div>
-      <div class="clear"></div>
-    </form>
-    
-    <div class="clear"></div>
-    <div id="results"></div>
-
-  </div>
-  
-  <!-- an empty div for the map -->
-  <div id="map-canvas"></div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpDWCc28PPOUNGzzjW-9aPa_06yHEVaZg"></script>
-<script type="text/javascript" src="application.js"></script>
-
-</body>
+		<script src="https://code.jquery.com/jquery-1.11.3.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpDWCc28PPOUNGzzjW-9aPa_06yHEVaZg"></script>
+		<script type="text/javascript" src="js/application.js"></script>
+		<script type="text/javascript" src="js/hack.js"></script>
+		<script src="js/index.js"></script>
+	</body>
 </html>
