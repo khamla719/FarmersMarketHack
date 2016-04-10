@@ -121,6 +121,8 @@ $(function() {
                 myLatlng = new google.maps.LatLng(latitude,longitude);
 
                 allMarkers = new google.maps.Marker({
+                  icon: "https://cdn2.iconfinder.com/data/icons/thesquid-ink-40-free-flat-icon-pack/64/carrot-48.png",
+                  animation: google.maps.Animation.DROP,
                   position: myLatlng,
                   map: map,
                   title: marketName[counter],
@@ -130,9 +132,9 @@ $(function() {
                       '<h3>' + results['Address'] + '</h3>' +
                       '<p> <span class="bold">Products: </span>' + results['Products'].split(';') + '</p>' +
                       '<p> <span class="bold">Schedule: </span>' + results['Schedule'] + '</p>' +
-                      '<p> <span class="bold">WIC: </span>' + "YES" + '</p>' +
-                      '<p> <span class="bold">SNAP: </span>' + "YES" + '</p>' +
-                      '<p> <span class="bold">SFNMP: </span>' + "YES" + '</p>' +
+                      '<p> <span class="bold">Accepts Special Supplemental Nutrition Program for Women, Infants, and Children (WIC): </span>' + "YES" + '</p>' +
+                      '<p> <span class="bold">Accepts Supplemental Nutrition Assistance Program (SNAP): </span>' + "YES" + '</p>' +
+                      '<p> <span class="bold">Accepts Senior Farmers Market Nutrition Program (SFMNP): </span>' + "YES" + '</p>' +
                       '</div>'
                 });
 
@@ -181,4 +183,3 @@ $(function() {
     $( ".zipSearch" ).show();
   });
 });
-
