@@ -1,0 +1,128 @@
+/*
+Project Name: DBC Civic Hackathon - Farmers Market Finder
+Author: Clayton Hopkins
+
+Style Guide
+Lato = Font
+30DC4C = Green
+9013FE = Purple
+292B33 = Dark Grey
+9B9B9B = Medium Grey
+D8D8D8 = Light Grey
+*/
+* {
+  -moz-box-sizing: border-box; /* Firexfox */
+  -webkit-box-sizing: border-box; /* Safari/Chrome/iOS/Android */
+  box-sizing: border-box; /* IE */
+}
+/* <div class="clearfix"></div> */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.clear {
+  clear: both;
+}
+.body-container {
+  width: 100%;
+  background-color: #292B33;
+  font-family: 'Lato', sans-serif;
+}
+h1 {
+  font-size: 60px;
+  color: #FFF;
+  line-height: 1.5em;
+}
+h2 {
+  font-size: 45px;
+  color: #FFF;
+  line-height: 1.5em;
+}
+p {
+  font-size: 25px;
+  color: #FFF;
+  line-height: 1.3em;
+}
+.italic {
+  font-style: italic;
+}
+.uppercase {
+  text-transform: uppercase;
+}
+a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a {
+  /*color: #FFF;*/
+}
+.hide {
+  display: none;
+}
+.navbar {
+  padding: 2em;
+  margin-bottom: 5em;
+  width: 100%;
+}
+.navleft {
+  float: left;
+}
+.navright {
+  float: right;
+}
+.title {
+  padding: 1em;
+}
+.intro {
+  background-image: url("../images/figs.png");
+  background-size: cover;
+  overflow: hidden;
+  text-align: center;
+  width: 100%;
+}
+.header {
+  background-color: RGBA(48,220,76,0.8);
+  margin: 5em 10em;
+  padding: 2em;
+}
+.marketinfo {
+  padding: 2em;
+}
+.marketinfo p {
+  padding: .25em 2em;
+}
+.footer {
+  text-align: center;
+  padding: 2em;
+  padding-bottom: 4.5em;
+}
+.footerline2 {
+  margin-bottom: 3em;
+}
+.footer a {
+  font-size: 25px;
+  color: #FFF;
+}
+.footerbutton {
+  background-color: #30DC4C;
+  padding: 1em 2em;
+  margin: 0 auto;
+  margin-top: 1em;
+  margin-bottom: 2em;
+  width: 25%;
+  transition-duration: 0.4s;
+  border-radius: 10px;
+}
+.footerbutton:hover {
+  background-color: #9013FE;
+  color: #FFF;
+}
+.heart {
+  color: #30DC4C;
+}
