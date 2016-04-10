@@ -128,8 +128,11 @@ $(function() {
                       '<div class="markerPop">' +
                       '<h1>' + marketName[counter].substring(4) + '</h1>' + //substring removes distance from title
                       '<h3>' + results['Address'] + '</h3>' +
-                      '<p>' + results['Products'].split(';') + '</p>' +
-                      '<p>' + results['Schedule'] + '</p>' +
+                      '<p> <span class="bold">Products: </span>' + results['Products'].split(';') + '</p>' +
+                      '<p> <span class="bold">Schedule: </span>' + results['Schedule'] + '</p>' +
+                      '<p> <span class="bold">WIC: </span>' + "YES" + '</p>' +
+                      '<p> <span class="bold">SNAP: </span>' + "YES" + '</p>' +
+                      '<p> <span class="bold">SFNMP: </span>' + "YES" + '</p>' +
                       '</div>'
                 });
 
