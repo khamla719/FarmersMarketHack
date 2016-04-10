@@ -1,141 +1,75 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <title>Places Searchbox</title>
-    <style>
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        height: 100%;
-      }
-      .controls {
-        margin-top: 10px;
-        border: 1px solid transparent;
-        border-radius: 2px 0 0 2px;
-        box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        height: 32px;
-        outline: none;
-        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-      }
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="Farmers Market Hack" content="Farmers Market Hack">
 
-      #pac-input {
-        background-color: #fff;
-        font-family: Roboto;
-        font-size: 15px;
-        font-weight: 300;
-        margin-left: 12px;
-        padding: 0 11px 0 13px;
-        text-overflow: ellipsis;
-        width: 300px;
-      }
+		<title>Find A Farmers Market</title>
 
-      #pac-input:focus {
-        border-color: #4d90fe;
-      }
+		<link href='https://fonts.googleapis.com/css?family=Lato:400,100,100italic,400italic,900,900italic' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/style.css">
+		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+		<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 
-      .pac-container {
-        font-family: Roboto;
-      }
+	</head>
 
-      #type-selector {
-        color: #fff;
-        background-color: #4d90fe;
-        padding: 5px 11px 0px 11px;
-      }
+	<body class="body-container">
 
-      #type-selector label {
-        font-family: Roboto;
-        font-size: 13px;
-        font-weight: 300;
-      }
-      #target {
-        width: 345px;
-      }
-    </style>
-  </head>
-  <body>
-    <input id="pac-input" class="controls" type="text" placeholder="Search Box">
-    <div id="map"></div>
-    <script>
-      // This example adds a search box to a map, using the Google Place Autocomplete
-      // feature. People can enter geographical searches. The search box will return a
-      // pick list containing a mix of places and predicted search terms.
+		<section class="navbar">
+			<img class="navleft" src="images/marketicon.png" alt="Food Market Finder">
+			<p class="title navleft">Bay Area Farmers Market Finder</p>
+			<!-- <p class="navright">Menu</p> -->
+		</section>
 
-      // This example requires the Places library. Include the libraries=places
-      // parameter when you first load the API. For example:
-      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+		<section class="intro">
+			<section class="header">
+				<h1>Find Your Nearest Farmers Market</h1>
+				<p>Locations Near You <span class="grey">&nbsp|&nbsp</span> Hours of Operation <span class="grey">&nbsp|&nbsp</span> Goods for Sale</p>
+			</section>
+			<section class="searchButtons">
+				<div id="control">
+					<form method="get" id="chooseZip">
+						<!-- <button type="submit" class="learnButton">Use current location</button> -->
+						<!-- <button type="button" id="searchZip" class="learnButton">Search by Zip Code</button> -->
+						<div class="clear"></div>
+						<div class="zipSearch">
+							<input id="textZip" type="text" name="zip" placeholder="Enter Your Zip Code" autofocus>
+							<button type="submit" class="learnButton">Search</button>
+						</div>
+						<div class="clear"></div>
+					</form>
+					<div class="clear"></div>
+					<div id="results"></div>
+				</div>
+			</section>
+		</section>
 
-      function initAutocomplete() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 37.7833, lng: -122.4167},
-          zoom: 13,
-          mapTypeId: google.maps.MapTypeId.ROADMAP
-        });
+		<section class="marketinfo hide">
+			<p>Farmers Market:</p>
+			<p>Address:</p>
+			<p>Hours of Operation:</p>
+			<p>Accepts WIC Food Stamps:</p>
+			<p>Accepts SNAP Food Stamps:<p>
+			<p>Accepts SFMNP Food Stamps:</p>
+		</section>
 
-        // Create the search box and link it to the UI element.
-        var input = document.getElementById('pac-input');
-        var searchBox = new google.maps.places.SearchBox(input);
-        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
-        // Bias the SearchBox results towards current map's viewport.
-        map.addListener('bounds_changed', function() {
-          searchBox.setBounds(map.getBounds());
-        });
+		<section class="main" id="mainview">
+			<div id="map-canvas"></div>
+		</section>
 
-        var markers = [];
-        // Listen for the event fired when the user selects a prediction and retrieve
-        // more details for that place.
-        searchBox.addListener('places_changed', function() {
-          var places = searchBox.getPlaces();
+		<section class="footer">
+			<p class="footerline2">Made with <span class="heart">&hearts; </span> by AJ, Clayton, Khamla, and Simon @ Dev Bootcamp's Civic Hackathon on April 9, 2016.</p>
+			<a target="_blank" class="footerbutton" href="https://github.com/khamla719/FarmersMarketHack">View on GitHub</a>
+		</section>
 
-          if (places.length == 0) {
-            return;
-          }
 
-          // Clear out the old markers.
-          markers.forEach(function(marker) {
-            marker.setMap(null);
-          });
-          markers = [];
-
-          // For each place, get the icon, name and location.
-          var bounds = new google.maps.LatLngBounds();
-          places.forEach(function(place) {
-            var icon = {
-              url: place.icon,
-              size: new google.maps.Size(71, 71),
-              origin: new google.maps.Point(0, 0),
-              anchor: new google.maps.Point(17, 34),
-              scaledSize: new google.maps.Size(25, 25)
-            };
-
-            // Create a marker for each place.
-            markers.push(new google.maps.Marker({
-              map: map,
-              icon: icon,
-              title: place.name,
-              position: place.geometry.location
-            }));
-
-            if (place.geometry.viewport) {
-              // Only geocodes have viewport.
-              bounds.union(place.geometry.viewport);
-            } else {
-              bounds.extend(place.geometry.location);
-            }
-          });
-          map.fitBounds(bounds);
-        });
-      }
-
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpDWCc28PPOUNGzzjW-9aPa_06yHEVaZg&libraries=places&callback=initAutocomplete"
-         async defer></script>
-  </body>
+<!-- 		<script src="https://code.jquery.com/jquery-1.11.3.js"></script> -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCpDWCc28PPOUNGzzjW-9aPa_06yHEVaZg"></script>
+		<script type="text/javascript" src="js/application.js"></script>
+		<script type="text/javascript" src="js/hack.js"></script>
+		<script src="js/index.js"></script>
+	</body>
 </html>
