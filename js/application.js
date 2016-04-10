@@ -1,7 +1,5 @@
 $(function() {
 
-    var arrKey = [];
-
     var marketId = []; //returned from the API
     var allLatlng = []; //returned from the API
     var allMarkers = []; //returned from the API
@@ -85,19 +83,11 @@ $(function() {
         success: function (data) {
 
            $.each(data.results, function (i, val) {
-            var objKey = {};
             marketId.push(val.id);
             marketName.push(val.marketname);
-            objKey["Market Name"] = val.marketname;
-            objKey["WIC"] = 'Yes';
-            objKey["SNAP"] = 'Yes';
-            objKey["SFMNP"] = 'Yes';
-            arrKey.push(objKey);
            });
 
           console.log(marketName);
-          console.log(arrKey);
-          console.log(JSON.stringify(arrKey));
 
           var counter = 0;
           //Now, use the id to get detailed info
@@ -114,7 +104,7 @@ $(function() {
 
                 var results = data[key];
 
-                // console.log(results);
+                console.log(results);
 
                 //The API returns a link to Google maps containing lat and long. This pulls it apart.
                 var googleLink = results['GoogleLink'];
@@ -180,10 +170,6 @@ $(function() {
         return false; // important: prevent the form from submitting
     });
 });
-
-var objKey = {};
-
-
 
 $(function() {
   $( "#searchZip" ).click(function() {
