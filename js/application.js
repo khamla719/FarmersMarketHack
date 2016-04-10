@@ -121,6 +121,8 @@ $(function() {
                 myLatlng = new google.maps.LatLng(latitude,longitude);
 
                 allMarkers = new google.maps.Marker({
+                  icon: "https://cdn2.iconfinder.com/data/icons/thesquid-ink-40-free-flat-icon-pack/64/carrot-48.png",
+                  animation: google.maps.Animation.DROP,
                   position: myLatlng,
                   map: map,
                   title: marketName[counter],
@@ -181,4 +183,3 @@ $(function() {
     $( ".zipSearch" ).show();
   });
 });
-
