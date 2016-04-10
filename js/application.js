@@ -176,10 +176,3 @@ $(function() {
         return false; // important: prevent the form from submitting
     });
 });
-
-$(function() {
-  $( "#searchZip" ).click(function() {
-    $("#searchZip").hide();
-    $( ".zipSearch" ).show();
-  });
-});
