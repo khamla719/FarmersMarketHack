@@ -11,14 +11,6 @@
 		<link rel="stylesheet" href="css/style.css">
 		<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 		<link rel="icon" href="/images/favicon.ico" type="image/x-icon">
-		<style>
-
-			#map-canvas{
-			    height: 500px;
-			    width: 700px;
-			}
-
-		</style>
 
 	</head>
 
@@ -35,6 +27,22 @@
 				<h1>Find Your Nearest Farmers Market</h1>
 				<p>Search by location and hours of operation</p>
 			</section>
+			<section class="searchButtons">
+				<div id="control">
+					<form method="get" id="chooseZip">
+						<!-- <button type="submit" class="learnButton">Use current location</button> -->
+						<!-- <button type="button" id="searchZip" class="learnButton">Search by Zip Code</button> -->
+						<div class="clear"></div>
+						<div class="zipSearch">
+							<input id="textZip" type="text" name="zip" placeholder="Enter Your Zip Code" autofocus>
+							<button type="submit" class="learnButton">Search</button>
+						</div>
+						<div class="clear"></div>
+					</form>
+					<div class="clear"></div>
+					<div id="results"></div>
+				</div>
+			</section>
 		</section>
 
 		<section class="marketinfo hide">
@@ -45,21 +53,7 @@
 			<p>Accepts SNAP Food Stamps:<p>
 			<p>Accepts SFMNP Food Stamps:</p>
 		</section>
-		
-		<div id="control">
-	    <form method="get" id="chooseZip">
-	      <button type="submit" class="learnButton">Use current location</button>
-	      <button type="button" id="searchZip" class="learnButton">Search by Zip Code</button>
-	      <div class="clear"></div>
-	      <div class="zipSearch">
-	        <input id="textZip" type="text" name="zip" placeholder="enter your zip code" autofocus>
-	        <button type="submit" class="learnButton">Search</button>
-	      </div>
-	      <div class="clear"></div>
-	    </form>
-	    <div class="clear"></div>
-	    <div id="results"></div>
-	  </div>
+
 
 		<section class="main" id="mainview">
 			<div id="map-canvas"></div>

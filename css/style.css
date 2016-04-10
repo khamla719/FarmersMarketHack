@@ -91,11 +91,37 @@ a {
   margin: 5em 10em;
   padding: 2em;
 }
+.searchButtons {
+  margin-bottom: 1.25em;
+}
 .marketinfo {
   padding: 2em;
 }
 .marketinfo p {
   padding: .25em 2em;
+}
+#map-canvas {
+  height: 500px;
+  width: 100%;
+}
+.zipSearch {
+  text-align: center;
+}
+#textZip {
+  font-size: 30px;
+  padding: .5em;
+  font-family: 'Lato', sans-serif;
+  border: none;
+  margin-right: .25em;
+}
+.learnButton {
+  font-size: 30px;
+  padding: .5em;
+  background-color: #30DC4C;
+  color: #FFF;
+  font-family: 'Lato', sans-serif;
+  border: none;
+  margin-left: .25em;
 }
 .footer {
   text-align: center;
